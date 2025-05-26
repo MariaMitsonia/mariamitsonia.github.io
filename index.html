@@ -53,11 +53,11 @@
     }
 
     section {
-      min-height: 100vh;
+      min-height: auto;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding: 6em 2em 2em;
+	  padding: 3em 2em 2em;
       transition: background 0.5s ease;
       color: black;
     }
@@ -95,11 +95,12 @@
     }
 
     .about-text {
-      flex: 1;
+	  flex: 1;
       font-size: 1.1em;
-      line-height: 1.8em;
+      line-height: 2em; /* Wider spacing */
       color: #333;
     }
+
 
     .skills-list {
       max-width: 1000px;
@@ -118,7 +119,7 @@
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2em;
+      gap: 1em;
       max-width: 1000px;
       margin: 2em auto;
     }
@@ -144,6 +145,54 @@
       font-size: 1em;
       color: #444;
     }
+	@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1em;
+  }
+
+  header {
+    font-size: 1.8em;
+    padding: 1em 0.5em;
+  }
+
+  .section-title {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-content img {
+    width: 80%;
+    max-width: 250px;
+  }
+
+  .skills-list li {
+    font-size: 1em;
+    line-height: 1.6em;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+  }
+
+  .project-item {
+    padding: 0.8em;
+  }
+
+  .project-description {
+    font-size: 0.95em;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -160,7 +209,7 @@
     <div class="about-content">
       <img src="images.png" alt="Your Photo" />
       <div class="about-text">
-        <p>I am 25 years old and most of my life I have studied only theoritical subjects. After finishing university I decided that I wanted to learn more about the Internet and its possibilities. That is why I got into a SAEK and started learning about program developing and site/app designing.</p>
+        <p>I am 25 years old and most of my life I have studied only theoritical subjects. After finishing university I decided that I wanted to learn more about the Internet and its possibilities. That is why I got into a SAEK and started learning about program developing and site/app designing. A new world was opened to me and from there I decided that this job was for me. I would really like to expand my knowledge on this subject and follow this career. </p>
       </div>
     </div>
   </section>
