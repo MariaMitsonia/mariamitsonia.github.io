@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Georgia', 'Garamond', serif;
+      scroll-behavior: smooth;
+      background: #121212;
+      color: #d1e9e9;
+    }
+
+    header {
+      text-align: center;
+      padding: 2em 1em 1em;
+      font-size: 2.5em;
+      font-weight: 700;
+      color: #e3c8ff;
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: space-around;
+      padding: 1em;
+      z-index: 1000;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    nav div {
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    nav div:hover {
+      color: #e3c8ff;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 6em 2em 2em;
+      transition: background 0.5s ease;
+      color: black;
+    }
+
+    #about, #skills, #projects {
+      background: #f7f2f9;
+    }
+
+    .section-title {
+      font-size: 2.5em;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+      text-align: left;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: 'Georgia', serif;
+      color: #4b0082;
+    }
+
+    .about-content {
+      display: flex;
+      gap: 2em;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .about-content img {
+      width: 300px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .about-text {
+      flex: 1;
+      font-size: 1.1em;
+      line-height: 1.8em;
+      color: #333;
+    }
+
+    .skills-list {
+      max-width: 1000px;
+      margin: 2em auto 0;
+      padding-left: 1.5em;
+      list-style-type: square;
+    }
+
+    .skills-list li {
+      margin-bottom: 1.5em;
+      font-size: 1.2em;
+      line-height: 1.8em;
+      color: #2f2f2f;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2em;
+      max-width: 1000px;
+      margin: 2em auto;
+    }
+
+    .project-item {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 1em;
+    }
+
+    .project-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      margin-bottom: 0.5em;
+    }
+
+    .project-description {
+      font-size: 1em;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <header>MARIA GALANI-MITSONIA</header>
+
+  <nav>
+    <div onclick="scrollToSection('about')">About Me</div>
+    <div onclick="scrollToSection('skills')">Skills</div>
+    <div onclick="scrollToSection('projects')">Projects</div>
+  </nav>
+
+  <section id="about">
+    <div class="section-title" style="margin-bottom: 0.2em;">About Me</div>
+    <div class="about-content">
+      <img src="images.png" alt="Your Photo" />
+      <div class="about-text">
+        <p>I am 25 years old and most of my life I have studied only theoritical subjects. After finishing university I decided that I wanted to learn more about the Internet and its possibilities. That is why I got into a SAEK and started learning about program developing and site/app designing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-title">Skills</div>
+    <ul class="skills-list">
+      <li>Hard-working and self-motivated individual with a passion for learning.</li>
+      <li>Experience in customer service, demonstrating strong communication and interpersonal skills.</li>
+      <li>Excellent at managing stressful situations with composure and effectiveness.</li>
+      <li>Highly sociable and team-oriented, easily building rapport with colleagues and clients.</li>
+      <li>Proficient in English – Cambridge Certificate of Proficiency in English (C2).</li>
+      <li>Intermediate Spanish – B1 level proficiency.</li>
+	  <li>Graduate of the SAEK - Department of Web Design and Games.</li>
+      <li>Graduate of the University of Patras – Department of Primary Education.</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <div class="section-title">Projects</div>
+    <div class="projects-grid">
+      <div class="project-item">
+        <img src="bubblejam.png" alt="Project 1">
+        <p class="project-description"> In this project our class in SAEK, participated in the Global Game Jam and we created a game called Bubble Jam. I was in charge of the UI/UX work. The game was created in Unity using C#. </p>
+      </div>
+      <div class="project-item">
+        <img src="cinema.png" alt="Project 2">
+        <p class="project-description">This project was created to resemble a Cinema Booking site that saves in a database its client that Signs in. It was created with PHP and HTML/CSS.</p>
+      </div>
+      <div class="project-item">
+        <img src="colors.png" alt="Project 3">
+        <p class="project-description">This project was meant to be a fun game for those who like hex colors as it is a Guessing Game where the player has to pick the correct color depending on the hex number under some seconds.</p>
+      </div>
+      <div class="project-item">
+        <img src="personalitytest.png" alt="Project 4">
+        <p class="project-description"> The personality test was inspired by a well known site called 16personalities. It is a fun way, after answering some questions, to discover your strenghs and weaknesses.</p>
+      </div>
+      <div class="project-item">
+        <img src="robot.png" alt="Project 5">
+        <p class="project-description">This robot was a project really fun one as we had to recreate a robot we liked through our childhood and put it to life in the programm Blender.</p>
+      </div>
+      <div class="project-item">
+        <img src="table.png" alt="Project 6">
+        <p class="project-description"> The table was meant to be part of a scene in a another game. Although in he end we did not complete the game I still have the initial thought of it which is the small table.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
