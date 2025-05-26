@@ -147,12 +147,75 @@
       font-size: 1em;
       color: #444;
     }
+	/* Hide burger on desktop, show on mobile */
+    .burger {
+      display: none;
+      font-size: 2em;
+      cursor: pointer;
+      user-select: none;
+      color: #e3c8ff;
+    }
+
+/* Default nav links style */
+   .nav-links {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
 	@media (max-width: 768px) {
   nav {
     flex-direction: column;
     align-items: center;
     gap: 0.5em;
     font-size: 1em;
+  }
+  .burger {
+    display: block;
+    position: fixed;
+    top: 0.6em;
+    right: 1em;
+    z-index: 1100;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1em 1.5em;
+    z-index: 1050;
+  }
+
+  .nav-links {
+    display: none; /* hide links initially */
+    flex-direction: column;
+    background: #121212;
+    position: fixed;
+    top: 3.5em;
+    right: 1em;
+    width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  }
+
+  .nav-links.active {
+    display: flex; /* show menu when active */
+  }
+
+  .nav-links div {
+    padding: 0.8em 1em;
+    cursor: pointer;
+    color: #d1e9e9;
+    border-bottom: 1px solid #444;
+    transition: background 0.3s;
+  }
+
+  .nav-links div:hover {
+    background: #4b0082;
+    color: #fff;
   }
 
   header {
@@ -220,10 +283,16 @@
   <header>MARIA GALANI-MITSONIA</header>
 
   <nav>
+  <div class="burger" onclick="toggleMenu()">
+    &#9776; <!-- Unicode hamburger icon -->
+  </div>
+  <div class="nav-links">
     <div onclick="scrollToSection('about')">About Me</div>
     <div onclick="scrollToSection('skills')">Skills</div>
     <div onclick="scrollToSection('projects')">Projects</div>
-  </nav>
+  </div>
+</nav>
+
 
   <section id="about">
     <div class="section-title" style="margin-bottom: 0.2em;">About Me</div>
@@ -283,6 +352,11 @@
     function scrollToSection(id) {
       document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
+	function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+}
+
   </script>
 </body>
 </html>
