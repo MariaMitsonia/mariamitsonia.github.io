@@ -118,11 +118,12 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1em;
       max-width: 1000px;
       margin: 2em auto;
     }
+
 
     .project-item {
       background: #ffffff;
@@ -145,7 +146,7 @@
       font-size: 1em;
       color: #444;
     }
-	@media (max-width: 768px) {
+	@media (max-width: 480px) {
   nav {
     flex-direction: column;
     align-items: center;
@@ -180,18 +181,19 @@
   }
 
   .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1em;
+    grid-template-columns: 1fr; /* One column for very small screens */
+    gap: 0.8em;
   }
 
   .project-item {
-    padding: 0.8em;
+    padding: 0.6em;
   }
 
   .project-description {
     font-size: 0.95em;
   }
 }
+
 
   </style>
 </head>
