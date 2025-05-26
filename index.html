@@ -13,6 +13,7 @@
 
     body, html {
       height: 100%;
+	  overflow-x: hidden;
       font-family: 'Georgia', 'Garamond', serif;
       scroll-behavior: smooth;
       background: #121212;
@@ -146,7 +147,7 @@
       font-size: 1em;
       color: #444;
     }
-	@media (max-width: 480px) {
+	@media (max-width: 768px) {
   nav {
     flex-direction: column;
     align-items: center;
@@ -163,16 +164,31 @@
     font-size: 2em;
     text-align: center;
   }
-
+  section {
+    padding: 4em 1em 2em; /* less side padding */
+  }
   .about-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 90%;   /* added to reduce overflow */
+    margin: 0 auto;
   }
 
   .about-content img {
     width: 80%;
     max-width: 250px;
+    margin-bottom: 1em; /* better spacing when stacked */
+  }
+
+  .about-text {
+    line-height: 2em;  /* wider line spacing */
+  }
+
+  .skills-list {
+    width: 90%;
+    margin: 2em auto 0;
+    padding-left: 1em;
   }
 
   .skills-list li {
@@ -181,22 +197,21 @@
   }
 
   .projects-grid {
-    display: grid;
+    width: 90%;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1em;
-    max-width: 1000px;
     margin: 2em auto;
   }
 
-
   .project-item {
-    padding: 0.6em;
+    padding: 0.8em;
   }
 
   .project-description {
     font-size: 0.95em;
   }
 }
+
 
 
   </style>
